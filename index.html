@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPORTS BIKE - Bicicletas e Acessórios</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            background-color: #0d0d0d;
+            color: #FFDD00;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 221, 0, 0.5);
+        }
+
+        nav {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #FFDD00;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            border-color: #FFDD00;
+            background-color: rgba(255, 221, 0, 0.1);
+        }
+
+        .banner {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 221, 0, 0.3);
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .banner img:hover {
+            transform: scale(1.02);
+        }
+
+        .button {
+            margin: 20px 0;
+        }
+
+        .button a {
+            display: inline-block;
+            background-color: #FFDD00;
+            color: #0d0d0d;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid #FFDD00;
+            font-size: 1.1rem;
+        }
+
+        .button a:hover {
+            background-color: transparent;
+            color: #FFDD00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 221, 0, 0.3);
+        }
+
+        .products-btn {
+            margin: 30px 0;
+        }
+
+        .products-btn a {
+            display: inline-block;
+            background-color: transparent;
+            color: #FFDD00;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid #FFDD00;
+            font-size: 1.1rem;
+        }
+
+        .products-btn a:hover {
+            background-color: #FFDD00;
+            color: #0d0d0d;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 221, 0, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            background-color: #111;
+            color: #FFDD00;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                gap: 10px;
+            }
+            
+            .button a, .products-btn a {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            alert('Olá, Bem-Vindo ao nosso site IMPORTS BIKE.\n\nEncontre a peça perfeita para a sua Bike para sua próxima aventura! Oferecemos uma ampla seleção de peças de bicicletas para todos os estilos e níveis: mountain bikes, bikes de estrada, urbanas, elétricas e muito mais.\n\nExplore nossa coleção e comece a pedalar rumo aos seus objetivos!');
+            console.log("Site IMPORTS BIKE carregado com sucesso!");
+        });
+    </script>
+
+    <div class="container">
+        <header>
+            <h1>IMPORTS BIKE</h1>
+            <p>Sua jornada começa aqui</p>
+        </header>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="https://wa.me/559581252391" target="_blank" rel="noopener noreferrer">Contato</a>
+        </nav>
+
+        <div class="banner">
+            <img src="banner 4.png" alt="Banner IMPORTS BIKE - Peças de qualidade">
+        </div>
+
+        <!-- Botão adicionado aqui -->
+        <div class="products-btn">
+            <a href="Compras/teste das compras.html">Clique aqui e conheça nossos produtos</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 IMPORTS BIKE. Todos os direitos reservados.</p>
+        <p>Desenvolvido com paixão por ciclismo</p>
+    </footer>
+</body>
+</html>

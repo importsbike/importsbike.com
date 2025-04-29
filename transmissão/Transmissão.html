@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transmissão para Bicicletas - IMPORTS BIKE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FFDD00;
+            --primary-dark: #e6c700;
+            --secondary: #000000;
+            --dark: #121212;
+            --light-dark: #1a1a1a;
+            --text-light: #FFFFFF;
+            --text-gray: #AAAAAA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #000000 0%, #121212 100%);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(255, 221, 0, 0.1);
+        }
+        
+        .header h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 8px rgba(255, 221, 0, 0.3);
+        }
+        
+        .header p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin: 1.2rem 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--light-dark);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 6px;
+            border: 2px solid var(--primary);
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .back-btn:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 221, 0, 0.3);
+        }
+        
+        .products-container {
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #000000 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 25px rgba(255, 221, 0, 0.2);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: #000;
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .product-info {
+            padding: 1.8rem;
+        }
+        
+        .product-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .product-description {
+            color: var(--text-gray);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .specs-table {
+            width: 100%;
+            margin: 1rem 0;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            border-collapse: collapse;
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 0.5rem 0;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        
+        .specs-table th {
+            width: 40%;
+        }
+        
+        .size-options {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .size-btn {
+            padding: 0.5rem 1rem;
+            background-color: var(--light-dark);
+            color: var(--text-light);
+            border: 1px solid #333;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .size-btn.active, .size-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .product-price {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+        
+        .buy-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 0.9rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        
+        .buy-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #000000 0%, #121212 100%);
+            color: var(--text-gray);
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            border-top: 1px solid #333;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-cogs"></i> Sistemas de Transmissão</h1>
+        <p>Peças de alta performance para sua bicicleta</p>
+        <a href="../Compras/teste das compras.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Voltar para Produtos
+        </a>
+    </div>
+    
+    <div class="products-container">
+        <div class="products-grid">
+            <!-- Câmbio Dianteiro 1 -->
+            <div class="product-card">
+                <img src="cambio-dianteiro-shimano-tourney-fd-tz510-28960.jpg" alt="Câmbio Dianteiro Shimano" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Câmbio Dianteiro Shimano XT</h3>
+                    <p class="product-description">Câmbio dianteiro de alta performance para mountain bike</p>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th>Tipo:</th>
+                            <td>3 velocidades</td>
+                        </tr>
+                        <tr>
+                            <th>Compatibilidade:</th>
+                            <td>Corrente 10/11v</td>
+                        </tr>
+                        <tr>
+                            <th>Peso:</th>
+                            <td>148g</td>
+                        </tr>
+                    </table>
+                    
+                    <p class="product-price">R$ 349,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Câmbio+Dianteiro+Shimano+XT&preco=349.90" class="buy-btn">
+                        <i class="fas fa-shopping-cart"></i> Comprar
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Cassete -->
+            <div class="product-card">
+                <img src="cassete_shimano_deore_xt_12v_cs_m8100_10_51_rv_3661_2_2cb8d2aa1f454d75226009fc6e665111_2022053017.png" alt="Cassete Shimano" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Cassete Shimano Deore 12v</h3>
+                    <p class="product-description">Cassete 12 velocidades 10-51T para MTB</p>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th>Velocidades:</th>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <th>Range:</th>
+                            <td>10-51T</td>
+                        </tr>
+                        <tr>
+                            <th>Peso:</th>
+                            <td>540g</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="size-options">
+                        <button class="size-btn active">10-51T</button>
+                        <button class="size-btn">11-50T</button>
+                    </div>
+                    
+                    <p class="product-price">R$ 499,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Cassete+Shimano+Deore+12v&preco=499.90" class="buy-btn">
+                        <i class="fas fa-shopping-cart"></i> Comprar
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Corrente -->
+            <div class="product-card">
+                <img src="corrente.jpg" alt="Corrente Shimano" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Corrente Shimano XT 12v</h3>
+                    <p class="product-description">Corrente de alta durabilidade com revestimento anti-corrosão</p>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th>Velocidades:</th>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <th>Comprimento:</th>
+                            <td>126 elos</td>
+                        </tr>
+                        <tr>
+                            <th>Peso:</th>
+                            <td>256g</td>
+                        </tr>
+                    </table>
+                    
+                    <p class="product-price">R$ 129,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Corrente+Shimano+XT+12v&preco=129.90" class="buy-btn">
+                        <i class="fas fa-shopping-cart"></i> Comprar
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Câmbio Traseiro -->
+            <div class="product-card">
+                <img src="cambio traseiro shimano.jpg" alt="Câmbio Traseiro Shimano" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Câmbio Traseiro Shimano 12v</h3>
+                    <p class="product-description">Transmite a energia do pedivela para a corrente e cassete</p>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th>Velocidades:</th>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <th>Compatibilidade:</th>
+                            <td>Cassete 10-51T</td>
+                        </tr>
+                        <tr>
+                            <th>Peso:</th>
+                            <td>280g</td>
+                        </tr>
+                    </table>
+                    
+                    <p class="product-price">R$ 429,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Câmbio+Traseiro+Shimano+12v&preco=429.90" class="buy-btn">
+                        <i class="fas fa-shopping-cart"></i> Comprar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 IMPORTS BIKE. Todos os direitos reservados.</p>
+        <p>Desenvolvido com paixão por ciclismo</p>
+    </footer>
+
+    <script>
+        // Interação com botões de tamanho
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active de todos os botões do mesmo grupo
+                this.parentNode.querySelectorAll('.size-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Adiciona active no botão clicado
+                this.classList.add('active');
+                
+                // Aqui você pode adicionar lógica para atualizar preço/imagem conforme seleção
+            });
+        });
+    </script>
+</body>
+</html>

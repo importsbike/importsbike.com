@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodas e Pneus - IMPORTS BIKE</title>
+    <style>
+        :root {
+            --primary: #FFDD00;
+            --primary-dark: #e6c700;
+            --secondary: #000000;
+            --dark: #121212;
+            --light-dark: #1a1a1a;
+            --text-light: #FFFFFF;
+            --text-gray: #AAAAAA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #000000 0%, #121212 100%);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(255, 221, 0, 0.1);
+        }
+        
+        .header h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 8px rgba(255, 221, 0, 0.3);
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin: 1.2rem 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--light-dark);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 6px;
+            border: 2px solid var(--primary);
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .back-btn:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 221, 0, 0.3);
+        }
+        
+        .products-container {
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #000000 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 25px rgba(255, 221, 0, 0.2);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: #000;
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .product-info {
+            padding: 1.8rem;
+        }
+        
+        .product-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .product-description {
+            color: var(--text-gray);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .product-price {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+        
+        .buy-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 0.9rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .buy-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #000000 0%, #121212 100%);
+            color: var(--text-gray);
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            border-top: 1px solid #333;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Rodas e Pneus</h1>
+        <a href="../Compras/teste das compras.html" class="back-btn">Voltar para Produtos</a>
+    </div>
+    
+    <div class="products-container">
+        <div class="products-grid">
+            <!-- Jogo de Rodas -->
+            <div class="product-card">
+                <img src="Jogo de Rodas MTB Shimano.png" alt="Jogo de Rodas MTB" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Jogo de Rodas MTB Shimano</h3>
+                    <p class="product-description">Rodas para mountain bike com cubo Shimano</p>
+                    
+                    <div class="size-options">
+                        <button class="size-btn active">26"</button>
+                        <button class="size-btn">27.5"</button>
+                        <button class="size-btn">29"</button>
+                    </div>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th>Aro:</th>
+                            <td>Alumínio</td>
+                        </tr>
+                        <tr>
+                            <th>Raio:</th>
+                            <td>36 raios</td>
+                        </tr>
+                        <tr>
+                            <th>Peso:</th>
+                            <td>2.1kg (par)</td>
+                        </tr>
+                    </table>
+                    
+                    <p class="product-price">R$ 899,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Rodas+MTB+Shimano+26&preco=899.90" class="buy-btn">Comprar</a>
+                </div>
+            </div>
+            
+            <!-- Pneu MTB -->
+            <div class="product-card">
+                <img src="Pneu MTB Maxxis Ardent.jpg" alt="Pneu MTB" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Pneu MTB Maxxis Ardent</h3>
+                    <p class="product-description">Pneu para trilha com ótima tração</p>
+                    
+                    <div class="size-options">
+                        <button class="size-btn active">26x2.25"</button>
+                        <button class="size-btn">27.5x2.25"</button>
+                        <button class="size-btn">29x2.25"</button>
+                    </div>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th>Tipo:</th>
+                            <td>Para trilha</td>
+                        </tr>
+                        <tr>
+                            <th>Banda:</th>
+                            <td>120 TPI</td>
+                        </tr>
+                        <tr>
+                            <th>Peso:</th>
+                            <td>780g</td>
+                        </tr>
+                    </table>
+                    
+                    <p class="product-price">R$ 249,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Pneu+MTB+Maxxis+Ardent+26&preco=249.90" class="buy-btn">Comprar</a>
+                </div>
+            </div>
+            
+            <!-- Câmara de Ar -->
+            <div class="product-card">
+                <img src="Câmaras de Ar.png" alt="Câmara de Ar" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Câmara de Ar 26"</h3>
+                    <p class="product-description">Câmara de ar reforçada para MTB</p>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th>Tamanho:</th>
+                            <td>26x1.75-2.4"</td>
+                        </tr>
+                        <tr>
+                            <th>Válvula:</th>
+                            <td>Schrader</td>
+                        </tr>
+                        <tr>
+                            <th>Peso:</th>
+                            <td>180g</td>
+                        </tr>
+                    </table>
+                    
+                    <p class="product-price">R$ 39,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Câmara+de+Ar+26&preco=39.90" class="buy-btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 IMPORTS BIKE. Todos os direitos reservados.</p>
+        <p>Desenvolvido com paixão por ciclismo</p>
+    </footer>
+
+    <script>
+        // Troca de tamanhos
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active de todos os botões
+                this.parentNode.querySelectorAll('.size-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Adiciona active no botão clicado
+                this.classList.add('active');
+                
+                // Aqui você pode adicionar lógica para atualizar preço/imagem conforme tamanho
+            });
+        });
+    </script>
+</body>
+</html>

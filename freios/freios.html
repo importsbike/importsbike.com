@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessórios para Bicicletas - IMPORTS BIKE</title>
+    <style>
+        :root {
+            --primary: #FFDD00;
+            --primary-dark: #e6c700;
+            --secondary: #000000;
+            --dark: #121212;
+            --light-dark: #1a1a1a;
+            --text-light: #FFFFFF;
+            --text-gray: #AAAAAA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #000000 0%, #121212 100%);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(255, 221, 0, 0.1);
+        }
+        
+        .header h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 8px rgba(255, 221, 0, 0.3);
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin: 1.2rem 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--light-dark);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 6px;
+            border: 2px solid var(--primary);
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .back-btn:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 221, 0, 0.3);
+        }
+        
+        .products-container {
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #000000 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 25px rgba(255, 221, 0, 0.2);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: #000;
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .product-info {
+            padding: 1.8rem;
+        }
+        
+        .product-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .product-description {
+            color: var(--text-gray);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .product-price {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+        
+        .buy-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 0.9rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .buy-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #000000 0%, #121212 100%);
+            color: var(--text-gray);
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            border-top: 1px solid #333;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-tshirt"></i> Acessórios para Bicicletas</h1>
+        <a href="../Compras/teste das compras.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar para Produtos</a>
+    </div>
+    
+    <div class="products-container">
+        <div class="products-grid">
+            <!-- Freio a Disco -->
+            <div class="product-card">
+                <img src="Freios a Disco Shimano.png" alt="Freio a Disco" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Freio a Disco Shimano</h3>
+                    <p class="product-description">Um sistema de frenagem que utiliza um disco metálico, o rotor, preso ao cubo da roda.</p>
+                    
+                    <div class="color-options">
+                        <div class="color-btn active" style="background-color: #000000;"></div>
+                        <div class="color-btn" style="background-color: #FF0000;"></div>
+                        <div class="color-btn" style="background-color: #0033FF;"></div>
+                    </div>
+                    
+                    <p class="product-price">R$ 149,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Freio+Disco+Shimano&preco=149.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+            
+            <!-- Freio Cantilever -->
+            <div class="product-card">
+                <img src="Freio Cantilever.png" alt="Freio Cantilever" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Freio Cantilever</h3>
+                    <p class="product-description">Um sistema de freio para bicicletas que utiliza sapatas para frear o aro.</p>
+                    
+                    <div class="color-options">
+                        <div class="color-btn active" style="background-color: #00AAFF;"></div>
+                        <div class="color-btn" style="background-color: #FF0000;"></div>
+                        <div class="color-btn" style="background-color: #000000;"></div>
+                    </div>
+                    
+                    <p class="product-price">R$ 49,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Freio+Cantilever&preco=49.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+            
+            <!-- Freio V-Brake -->
+            <div class="product-card">
+                <img src="v-brake-logan-orbital-aluminio-polido-unidade-6613ee074f0ef.jpg" alt="Freio V-Brake" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Freio V-Brake</h3>
+                    <p class="product-description">Foi desenvolvido para melhorar a frenagem da bike. Com suas hastes rígidas e leves, o freio se torna extremamente confiável, para uso em trilhas leves e passeios.</p>
+                    <p class="product-price">R$ 129,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Freio+V-Brake&preco=129.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+            
+            <!-- Freio Caliper -->
+            <div class="product-card">
+                <img src="freio_speed_caliper_campagnolo_chorus_diant_tras_br20_chdp_7191_1_a4935b6618cc052aab94a35e52824edb.png" alt="Freio Caliper" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Freio Caliper</h3>
+                    <p class="product-description">A pinça nada mais é que um cilindro atuador. Ela recebe a pressão do fluido e atua sobre um pistão, fazendo a força necessária para fechar as pastilhas.</p>
+                    <p class="product-price">R$ 89,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Freio+Caliper&preco=89.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+            
+            <!-- Freio a Tambor -->
+            <div class="product-card">
+                <img src="Freio a Tambor.png" alt="Freio a Tambor" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Freio a Tambor</h3>
+                    <p class="product-description">É um sistema de freio utilizado em veículos que usa o atrito entre sapatas de freio e um tambor para desacelerar ou parar o veículo.</p>
+                    <p class="product-price">R$ 79,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Freio+Tambor&preco=79.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+            
+            <!-- Freio Coaster Brake -->
+            <div class="product-card">
+                <img src="Freio Coaster Brake.jpg" alt="Freio Coaster Brake" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Freio Coaster Brake</h3>
+                    <p class="product-description">É um sistema de freio interno localizado no cubo da roda traseira de uma bicicleta.</p>
+                    <p class="product-price">R$ 119,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Freio+Coaster+Brake&preco=119.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+            
+            <!-- Pastilhas de Freios -->
+            <div class="product-card">
+                <img src="images.jfif" alt="Pastilhas de Freios" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Pastilhas de Freios</h3>
+                    <p class="product-description">As pastilhas de freio são componentes essenciais em um sistema de freio a disco, responsáveis por gerar atrito e pressão para reduzir a velocidade do veículo ou pará-lo completamente.</p>
+                    
+                    <div class="color-options">
+                        <div class="color-btn active" style="background-color: #00AAFF;"></div>
+                        <div class="color-btn" style="background-color: #FF0000;"></div>
+                        <div class="color-btn" style="background-color: #000000;"></div>
+                    </div>
+                    
+                    <p class="product-price">R$ 49,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Pastilhas+Freio&preco=49.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 IMPORTS BIKE. Todos os direitos reservados.</p>
+        <p>Desenvolvido com paixão por ciclismo</p>
+    </footer>
+
+    <script>
+        // Interação com botões de cor
+        document.querySelectorAll('.color-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active de todos os botões do mesmo grupo
+                this.parentNode.querySelectorAll('.color-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Adiciona active no botão clicado
+                this.classList.add('active');
+            });
+        });
+
+        // Interação com botões de tamanho
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active de todos os botões do mesmo grupo
+                this.parentNode.querySelectorAll('.size-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Adiciona active no botão clicado
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

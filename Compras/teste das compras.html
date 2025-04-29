@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peças para Bicicletas - IMPORTS BIKE</title>
+    <style>
+        :root {
+            --primary: #FFDD00;  /* Amarelo vibrante */
+            --primary-dark: #e6c700;
+            --secondary: #000000;  /* Preto */
+            --dark: #121212;
+            --light-dark: #1a1a1a;
+            --text-light: #FFFFFF;
+            --text-gray: #AAAAAA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--secondary);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #000000 0%, #121212 100%);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(255, 221, 0, 0.1);
+        }
+        
+        .header h1 {
+            color: var(--primary);
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 221, 0, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin: 1.2rem 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--light-dark);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 6px;
+            border: 2px solid var(--primary);
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .back-btn:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 221, 0, 0.3);
+        }
+        
+        .categories-container {
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .category-section {
+            margin-bottom: 4rem;
+        }
+        
+        .category-title {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-title i {
+            font-size: 1.8rem;
+        }
+        
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .part-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #000000 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .part-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 25px rgba(255, 221, 0, 0.2);
+        }
+        
+        .part-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #000;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .part-info {
+            padding: 1.8rem;
+        }
+        
+        .part-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        .part-price {
+            color: var(--primary);
+            font-weight: bold;
+            margin: 1.2rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .part-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            font-size: 1rem;
+        }
+        
+        .part-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #000000 0%, #121212 100%);
+            color: var(--text-gray);
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            border-top: 1px solid #333;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .parts-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+            
+            .category-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Peças para Bicicletas</h1>
+        <p>Todas as peças que você precisa para sua bike</p>
+        <a href="../index.html" class="back-btn">Voltar ao Início</a>
+    </div>
+    
+    <div class="categories-container">
+        <!-- Transmissão -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fas fa-cogs"></i> Transmissão</h2>
+            <div class="parts-grid">
+                <div class="part-card">
+                    <img src="cambio-dianteiro-shimano-tourney-fd-tz510-28960.jpg" alt="Câmbio Dianteiro" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Câmbio Dianteiro</h3>
+                        <p class="part-price">R$ 349,90</p>
+                        <a href="../transmissão/Transmissão.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="cambio traseiro shimano.jpg" alt="Câmbio Traseiro" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Câmbio Traseiro</h3>
+                        <p class="part-price">R$ 150,00 - R$ 600,00</p>
+                        <a href="../transmissão/Transmissão.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="corrente.jpg" alt="Corrente" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Corrente</h3>
+                        <p class="part-price">R$ 50,00 - R$ 200,00</p>
+                        <a href="../transmissão/Transmissão.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="cassete_shimano_deore_xt_12v_cs_m8100_10_51_rv_3661_2_2cb8d2aa1f454d75226009fc6e665111_2022053017.png" alt="Cassete" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Cassete</h3>
+                        <p class="part-price">R$ 499,90</p>
+                        <a href="../transmissão/Transmissão.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Freios -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fas fa-stop-circle"></i> Freios</h2>
+            <div class="parts-grid">
+                <div class="part-card">
+                    <img src="Freios a Disco Shimano.png" alt="Freio a Disco" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Freio a Disco</h3>
+                        <p class="part-price">R$ 150,00 - R$ 800,00</p>
+                        <a href="../freios/freios.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="v-brake-logan-orbital-aluminio-polido-unidade-6613ee074f0ef.jpg" alt="Freio V-Brake" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Freio V-Brake</h3>
+                        <p class="part-price">R$ 80,00 - R$ 300,00</p>
+                        <a href="../freios/freios.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="images.jfif" alt="Pastilhas de Freio" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Pastilhas de Freio</h3>
+                        <p class="part-price">R$ 30,00 - R$ 150,00</p>
+                        <a href="../freios/freios.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Rodas e Pneus -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fas fa-tire"></i> Rodas e Pneus</h2>
+            <div class="parts-grid">
+                <div class="part-card">
+                    <img src="aro.png" alt="Aros" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Aros</h3>
+                        <p class="part-price">R$ 200,00 - R$ 1.000,00</p>
+                        <a href="../rodas e pneus/rodas_pneus.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="Pneu de bike.png" alt="Pneus" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Pneus</h3>
+                        <p class="part-price">R$ 100,00 - R$ 400,00</p>
+                        <a href="../rodas e pneus/rodas_pneus.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="Câmaras de Ar.png" alt="Câmaras de Ar" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Câmaras de Ar</h3>
+                        <p class="part-price">R$ 30,00 - R$ 80,00</p>
+                        <a href="../rodas e pneus/rodas_pneus.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Suspensão -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fas fa-compress-alt"></i> Suspensão</h2>
+            <div class="parts-grid">
+                <div class="part-card">
+                    <img src="Garfo-Suspensao.png" alt="Garfo de Suspensão" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Garfo de Suspensão</h3>
+                        <p class="part-price">R$ 500,00 - R$ 3.000,00</p>
+                        <a href="../suspensão/suspensao.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="amortecedor traseiro.png" alt="Amortecedor Traseiro" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Amortecedor Traseiro</h3>
+                        <p class="part-price">R$ 400,00 - R$ 2.500,00</p>
+                        <a href="../suspensão/suspensao.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="Kit Completo Suspensão.png" alt="Kit Suspensão" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Kit Completo Suspensão</h3>
+                        <p class="part-price">R$ 1.200,00 - R$ 5.000,00</p>
+                        <a href="../suspensão/suspensao.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quadros -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fas fa-bicycle"></i> Quadros</h2>
+            <div class="parts-grid">
+                <div class="part-card">
+                    <img src="Quadro MTB Carbono.png" alt="Quadro MTB" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Quadro MTB</h3>
+                        <p class="part-price">R$ 800,00 - R$ 5.000,00</p>
+                        <a href="../quadro/quadros.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="Quadro Estrada.jpg" alt="Quadro Estrada" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Quadro Estrada</h3>
+                        <p class="part-price">R$ 1.200,00 - 8.000,00</p>
+                        <a href="../quadro/quadros.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="Quadro Urbano.png" alt="Quadro Urbano" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Quadro Urbano</h3>
+                        <p class="part-price">R$ 600,00 - R$ 3.000,00</p>
+                        <a href="../quadro/quadros.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="Quadro Infantil Aro 20.png" alt="Quadro Infantil" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Quadro Infantil</h3>
+                        <p class="part-price">R$ 600,00 - R$ 3.000,00</p>
+                        <a href="../quadro/quadros.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Acessórios -->
+        <div class="category-section">
+            <h2 class="category-title"><i class="fas fa-tshirt"></i> Acessórios</h2>
+            <div class="parts-grid">
+                <div class="part-card">
+                    <img src="Iluminação.png" alt="Iluminação" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Iluminação</h3>
+                        <p class="part-price">R$ 40,00 - R$ 300,00</p>
+                        <a href="../acessorios/acessorios.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="Garrafinhas.png" alt="Garrafinhas" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Garrafinhas</h3>
+                        <p class="part-price">R$ 30,00 - R$ 100,00</p>
+                        <a href="../acessorios/acessorios.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="Bagageiro Traseiro.png" alt="Cadeados" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Bagageiro</h3>
+                        <p class="part-price">R$ 50,00 - R$ 300,00</p>
+                        <a href="../acessorios/acessorios.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+                
+                <div class="part-card">
+                    <img src="Cestinha Dianteira.png" alt="Cestinha Dianteira" class="part-image">
+                    <div class="part-info">
+                        <h3 class="part-name">Cestinha Dianteira</h3>
+                        <p class="part-price">R$ 80,00 - R$ 400,00</p>
+                        <a href="../acessorios/acessorios.html" class="part-btn">Ver Opções</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 IMPORTS BIKE. Todos os direitos reservados.</p>
+        <p>Desenvolvido com paixão por ciclismo</p>
+    </footer>
+</body>
+</html>

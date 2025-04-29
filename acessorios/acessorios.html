@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessórios para Bicicletas - IMPORTS BIKE</title>
+    <style>
+        :root {
+            --primary: #FFDD00;
+            --primary-dark: #e6c700;
+            --secondary: #000000;
+            --dark: #121212;
+            --light-dark: #1a1a1a;
+            --text-light: #FFFFFF;
+            --text-gray: #AAAAAA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #000000 0%, #121212 100%);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(255, 221, 0, 0.1);
+        }
+        
+        .header h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 8px rgba(255, 221, 0, 0.3);
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin: 1.2rem 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--light-dark);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 6px;
+            border: 2px solid var(--primary);
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .back-btn:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 221, 0, 0.3);
+        }
+        
+        .products-container {
+            max-width: 1300px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #000000 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 25px rgba(255, 221, 0, 0.2);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: #000;
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .product-info {
+            padding: 1.8rem;
+        }
+        
+        .product-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .product-description {
+            color: var(--text-gray);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .product-price {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+        
+        .buy-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 0.9rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .buy-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #000000 0%, #121212 100%);
+            color: var(--text-gray);
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            border-top: 1px solid #333;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-tshirt"></i> Acessórios para Bicicletas</h1>
+        <a href="../Compras/teste das compras.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar para Produtos</a>
+    </div>
+    
+    <div class="products-container">
+        <div class="products-grid">
+            <!-- Farol LED -->
+            <div class="product-card">
+                <img src="Iluminação.png" alt="Iluminação" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Farol LED</h3>
+                    <p class="product-description">Farol de bicicleta com tecnologia LED de alta potência, ideal para ciclismo noturno com alcance de até 200 metros.</p>
+                    
+                    <div class="color-options">
+                        <div class="color-btn active" style="background-color: #000000;"></div>
+                        <div class="color-btn" style="background-color: #FF0000;"></div>
+                        <div class="color-btn" style="background-color: #0033FF;"></div>
+                    </div>
+                    
+                    <p class="product-price">R$ 129,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Farol+LED&preco=129.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="Garrafinhas.png" alt="Garrafinha Esportiva" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Garrafinha</h3>
+                    <p class="product-description">Garrafa térmica para bicicleta com capacidade de 750ml, mantém líquidos frios por até 24 horas.</p>
+                    
+                    <div class="color-options">
+                        <div class="color-btn active" style="background-color: #00AAFF;"></div>
+                        <div class="color-btn" style="background-color: #FF0000;"></div>
+                        <div class="color-btn" style="background-color: #000000;"></div>
+                    </div>
+                    
+                    <p class="product-price">R$ 39,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Garrafinha+Esportiva&preco=39.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+            
+            <!-- Cestinha Dianteira -->
+            <div class="product-card">
+                <img src="Cestinha Dianteira.png" alt="Cestinha Dianteira" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Cestinha Dianteira</h3>
+                    <p class="product-description">Cesta prática para bicicleta com capacidade de 10kg, fácil instalação e material resistente à intempéries.</p>
+                    <p class="product-price">R$ 89,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Cestinha+Dianteira&preco=89.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+            
+            <!-- Bagageiro Traseiro -->
+            <div class="product-card">
+                <img src="Bagageiro Traseiro.png" alt="Bagageiro Traseiro" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Bagageiro Traseiro</h3>
+                    <p class="product-description">Bagageiro de alumínio para bicicleta com capacidade de 25kg, ideal para transportar cargas leves.</p>
+                    <p class="product-price">R$ 119,90</p>
+                    <a href="../Pagina de Compra/pagina_de_compra.html?produto=Bagageiro+Traseiro&preco=119.90" class="buy-btn">Comprar Agora</a>
+                </div>
+            </div>
+    
+    <footer>
+        <p>&copy; 2025 IMPORTS BIKE. Todos os direitos reservados.</p>
+        <p>Desenvolvido com paixão por ciclismo</p>
+    </footer>
+
+    <script>
+        // Interação com botões de cor
+        document.querySelectorAll('.color-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active de todos os botões do mesmo grupo
+                this.parentNode.querySelectorAll('.color-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Adiciona active no botão clicado
+                this.classList.add('active');
+            });
+        });
+
+        // Interação com botões de tamanho
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active de todos os botões do mesmo grupo
+                this.parentNode.querySelectorAll('.size-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Adiciona active no botão clicado
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
